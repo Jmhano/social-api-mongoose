@@ -13,10 +13,21 @@ const userSchema: new Schema{
     friends: {
 
     }
+
+    thoughts: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Thought'        }
+      ]
 }
+
+// get total count of thoughts and replies on retrieval
+UserSchema.virtual('thoughtCount').get(function() {
+    return this.thoughts.length;
+  });
 
 
 const user = model('User', SocialSchema);
 
-// export the Pizza model
+// export the User model
 module.exports = User;

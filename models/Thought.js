@@ -13,10 +13,10 @@ const ThoughtSchema = new Schema({
     type: String,
   },
   reactions: {
-    
+
   },
 });
 
-const Comment = model("Comment", CommentSchema);
+const Thought = model("Thought", ThoughtSchema);
 
-module.exports = Comment;
+module.exports = Thought;
